@@ -1521,6 +1521,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "ACADEMIC.APPLICATION/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "ACADEMIC.DOMAIN": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.2"
+        },
+        "compile": {
+          "bin/placeholder/ACADEMIC.APPLICATION.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ACADEMIC.APPLICATION.dll": {}
+        }
+      },
       "ACADEMIC.DOMAIN/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5754,6 +5768,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "ACADEMIC.APPLICATION/1.0.0": {
+      "type": "project",
+      "path": "../ACADEMIC.APPLICATION/ACADEMIC.APPLICATION.csproj",
+      "msbuildProject": "../ACADEMIC.APPLICATION/ACADEMIC.APPLICATION.csproj"
+    },
     "ACADEMIC.DOMAIN/1.0.0": {
       "type": "project",
       "path": "../ACADEMIC.DOMAIN/ACADEMIC.DOMAIN.csproj",
@@ -5762,6 +5781,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "ACADEMIC.APPLICATION >= 1.0.0",
       "ACADEMIC.DOMAIN >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.2",
@@ -5798,7 +5818,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "E:\\GIANFRANCO\\PROYECTOS\\ACADEMIC\\ACADEMIC_BACK\\ACADEMIC\\ACADEMIC.APPLICATION\\ACADEMIC.APPLICATION.csproj": {
+              "projectPath": "E:\\GIANFRANCO\\PROYECTOS\\ACADEMIC\\ACADEMIC_BACK\\ACADEMIC\\ACADEMIC.APPLICATION\\ACADEMIC.APPLICATION.csproj"
+            },
             "E:\\GIANFRANCO\\PROYECTOS\\ACADEMIC\\ACADEMIC_BACK\\ACADEMIC\\ACADEMIC.DOMAIN\\ACADEMIC.DOMAIN.csproj": {
               "projectPath": "E:\\GIANFRANCO\\PROYECTOS\\ACADEMIC\\ACADEMIC_BACK\\ACADEMIC\\ACADEMIC.DOMAIN\\ACADEMIC.DOMAIN.csproj"
             }
@@ -5813,6 +5837,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -5844,7 +5869,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -14,6 +14,8 @@ namespace ACADEMIC.DOMAIN
 
         public float ReferencedPrice { get; set; }
 
+        public bool State { get; set; }
+
         public List<Inscription> Inscriptions { get; set; }
     }
 }

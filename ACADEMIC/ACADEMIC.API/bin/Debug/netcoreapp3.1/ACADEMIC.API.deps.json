@@ -1384,8 +1384,21 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "ACADEMIC.APPLICATION/1.0.0": {
+        "dependencies": {
+          "ACADEMIC.DOMAIN": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.2"
+        },
+        "runtime": {
+          "ACADEMIC.APPLICATION.dll": {}
+        },
+        "compile": {
+          "ACADEMIC.APPLICATION.dll": {}
+        }
+      },
       "ACADEMIC.DATA/1.0.0": {
         "dependencies": {
+          "ACADEMIC.APPLICATION": "1.0.0",
           "ACADEMIC.DOMAIN": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
@@ -3704,6 +3717,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "ACADEMIC.APPLICATION/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "ACADEMIC.DATA/1.0.0": {
       "type": "project",

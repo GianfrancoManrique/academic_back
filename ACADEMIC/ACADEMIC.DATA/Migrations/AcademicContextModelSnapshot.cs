@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ACADEMIC.DATA.Migrations
 {
-    [DbContext(typeof(AcademicContext))]
+    [DbContext(typeof(DatabaseService))]
     partial class AcademicContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -32,6 +32,9 @@ namespace ACADEMIC.DATA.Migrations
 
                     b.Property<float>("ReferencedPrice")
                         .HasColumnType("real");
+
+                    b.Property<bool>("State")
+                        .HasColumnType("bit");
 
                     b.HasKey("CourseId");
 
