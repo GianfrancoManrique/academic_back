@@ -13,8 +13,15 @@ namespace ACADEMIC.DATA
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"
-            Server=tcp:devmasterperu.database.windows.net,1433;Initial Catalog=AcademicDB;Persist Security Info=False;User ID=student;Password=Qazw3579@_;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            Server=tcp:devmasterperu.database.windows.net,1433;Initial Catalog=AcademicDB;Persist Security Info=False;User ID=student;Password=;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Inscription>().HasKey(i=> new {i.CourseId,i.StudentId});
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

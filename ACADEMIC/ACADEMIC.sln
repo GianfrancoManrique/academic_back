@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACADEMIC.DOMAIN", "ACADEMIC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACADEMIC.DATA", "ACADEMIC.DATA\ACADEMIC.DATA.csproj", "{9A90134C-C99A-4A17-8A2A-A9208FEEEAA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACADEMIC.API", "ACADEMIC.API\ACADEMIC.API.csproj", "{F24DF59D-054E-4F10-A3A5-2B0AB219EFCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9A90134C-C99A-4A17-8A2A-A9208FEEEAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A90134C-C99A-4A17-8A2A-A9208FEEEAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A90134C-C99A-4A17-8A2A-A9208FEEEAA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F24DF59D-054E-4F10-A3A5-2B0AB219EFCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F24DF59D-054E-4F10-A3A5-2B0AB219EFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F24DF59D-054E-4F10-A3A5-2B0AB219EFCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F24DF59D-054E-4F10-A3A5-2B0AB219EFCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

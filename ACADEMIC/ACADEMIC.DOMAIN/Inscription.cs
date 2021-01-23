@@ -7,12 +7,12 @@ namespace ACADEMIC.DOMAIN
 {
     public class Inscription
     {
-        [Required]
+        [Required][Key]
         public int CourseId { get; set; }
 
         public Course Course { get; set; }
 
-        [Required]
+        [Required][Key]
         public int StudentId { get; set; }
 
         public Student Student { get; set; }
