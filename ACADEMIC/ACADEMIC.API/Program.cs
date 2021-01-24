@@ -23,6 +23,7 @@ namespace ACADEMIC.API
                 try
                 {
                     var context = services.GetRequiredService<DatabaseService>();
+                    
                     DbInitializer.Seed(context);
                 }
                 catch (Exception ex)

@@ -2,7 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ACADEMIC.APPLICATION;
+using ACADEMIC.APPLICATION.Courses.GetCourses;
 using ACADEMIC.DATA;
+using ACADEMIC.DATA.Profiles;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -26,6 +30,27 @@ namespace ACADEMIC.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DatabaseService>(opt => opt.UseSqlServer(_configuration.GetConnectionString("Academic")));
+
+            services.AddMvc();
+
+            services.AddSwaggerGen();
+
+            services.AddTransient<IDatabaseService, DatabaseService>();
+
+            services.AddTransient<IGetCoursesQuery, GetCoursesQuery>();
+
+            #region profiles
+
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new CourseProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            #endregion
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,14 +61,27 @@ namespace ACADEMIC.API
                 app.UseDeveloperExceptionPage();
             }
 
+            #region Configure Swagger
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Academic V1");
+            });
+
+            #endregion
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                //endpoints.MapGet("/", async context =>
+                //{
+                //    await context.Response.WriteAsync("Hello World!");
+                //});
+
+                endpoints.MapControllers();
             });
         }
     }
