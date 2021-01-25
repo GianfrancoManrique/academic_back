@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "ACADEMIC.DOMAIN/1.0.0": {
+        "runtime": {
+          "ACADEMIC.DOMAIN.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ACADEMIC.DOMAIN/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
