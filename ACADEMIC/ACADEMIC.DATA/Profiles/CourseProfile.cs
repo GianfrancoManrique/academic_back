@@ -1,4 +1,5 @@
 ﻿using ACADEMIC.APPLICATION.Courses.GetCourses;
+using ACADEMIC.APPLICATION.Courses.PostCourse;
 using ACADEMIC.DOMAIN;
 using AutoMapper;
 using System;
@@ -12,6 +13,7 @@ namespace ACADEMIC.DATA.Profiles
         public CourseProfile()
         {
             this.CreateMap<Course,GetCourseModel>();
+            this.CreateMap<PostCourseModel,Course>();
         }
     }
 }

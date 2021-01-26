@@ -1,4 +1,5 @@
 ﻿using ACADEMIC.APPLICATION.Courses.GetCourses;
+using ACADEMIC.APPLICATION.Courses.PostCourse;
 using ACADEMIC.DATA;
 using ACADEMIC.DOMAIN;
 using Microsoft.AspNetCore.Mvc;
@@ -17,10 +18,12 @@ namespace ACADEMIC.API.Controllers
     {
         //private readonly DatabaseService _DatabaseService;
         private readonly IGetCoursesQuery _IGetCoursesQuery;
+        private readonly IPostCourseCommand _IPostCourseCommand;
 
-        public CourseController(IGetCoursesQuery IGetCoursesQuery)
+        public CourseController(IGetCoursesQuery IGetCoursesQuery, IPostCourseCommand IPostCourseCommand)
         {
             _IGetCoursesQuery = IGetCoursesQuery;
+            _IPostCourseCommand = IPostCourseCommand;
         }
 
         [HttpGet]
@@ -29,6 +32,20 @@ namespace ACADEMIC.API.Controllers
             var courses = await _IGetCoursesQuery.Execute();
 
             return Ok(courses);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> PostCourse([FromBody] PostCourseModel model)
+        {
+            if (model == null)
+                return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var course = await _IPostCourseCommand.Execute(model);
+
+            return StatusCode(201);
+
         }
     }
 }

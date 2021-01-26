@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ACADEMIC.APPLICATION;
 using ACADEMIC.APPLICATION.Courses.GetCourses;
+using ACADEMIC.APPLICATION.Courses.PostCourse;
 using ACADEMIC.DATA;
 using ACADEMIC.DATA.Profiles;
 using AutoMapper;
@@ -40,6 +41,8 @@ namespace ACADEMIC.API
             services.AddTransient<IDatabaseService, DatabaseService>();
 
             services.AddTransient<IGetCoursesQuery, GetCoursesQuery>();
+
+            services.AddTransient<IPostCourseCommand, PostCourseCommand>();
 
             #region profiles
 

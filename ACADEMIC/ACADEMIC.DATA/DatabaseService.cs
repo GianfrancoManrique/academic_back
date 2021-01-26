@@ -2,6 +2,7 @@
 using ACADEMIC.DOMAIN;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Threading.Tasks;
 
 namespace ACADEMIC.DATA
 {
@@ -28,6 +29,11 @@ namespace ACADEMIC.DATA
             modelBuilder.Entity<Inscription>().HasKey(i=> new {i.CourseId,i.StudentId});
 
             base.OnModelCreating(modelBuilder);
+        }
+
+        public Task<int> SaveAsync()
+        {
+            return base.SaveChangesAsync();
         }
     }
 }
